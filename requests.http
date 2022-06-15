@@ -1,0 +1,28 @@
+###
+POST http://localhost:3000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "dataAgendada": "John 2",
+  "nomeAgendador": 12,
+  "cpfAgendador": "johnconway@email.com",
+  "nomeAgenteRegistroDesignado" : "palmer",
+  "cpfAgenteRegistroDesignado": "joaozinho"
+}
+
+###
+GET http://localhost:3000/api/agendamento HTTP/1.1
+
+###
+GET http://localhost:3000/api/agendamento/62a7f0bd338e6c1e21fb9f7a HTTP/1.1
+
+###
+PUT  http://localhost:3000/api/agendamento/62a7f0bd338e6c1e21fb9f7a HTTP/1.1
+Content-Type: application/json
+{
+  "dataAgendada": "John 00000002",
+  "nomeAgendador": 12,
+  "cpfAgendador": "johnconway@email.com",
+  "nomeAgenteRegistroDesignado" : "palmer",
+  "cpfAgenteRegistroDesignado": "joaozinho"
+}
