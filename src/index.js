@@ -18,6 +18,7 @@ const port = process.env.PORT || 9000;
 
 app.use(express.json());
 app.use("/api", userRoute);
+app.use(cors());
 
 
 
