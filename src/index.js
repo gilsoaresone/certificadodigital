@@ -10,7 +10,7 @@ const port = process.env.PORT || 9000;
 
 // middlewares
 app.use((req, res, next) => {
-    res.header('Acess-Control-Allow-Origin', "https://certificadodigital.herokuapp.com");
+    res.header('Acess-Control-Allow-Origin', "*");
     app.use(cors());
     next();
 });
