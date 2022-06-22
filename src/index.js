@@ -22,7 +22,7 @@ app.use("/api", userRoute);
 
 
 // routes
-app.get("/", (req, res, next) => {
+app.get("/", (req, res,) => {
      res.send("Bem vindo a minha api");
 
 });
