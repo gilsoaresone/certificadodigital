@@ -4,6 +4,15 @@ const cors = require("cors")
 require("dotenv").config();
 const userRoute = require("./routes/user");
 
+
+
+var corsOptions = {
+  origin: 'http://example.com',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+
+
 // settings
 const app = express();
 const port = process.env.PORT || 9000;
@@ -12,15 +21,11 @@ const port = process.env.PORT || 9000;
 
 app.use(express.json());
 app.use("/api", userRoute);
-app.use((req, res, next) => {
-    res.header("Acess-Control-Allow-Origin", "*");
-    app.use(cors());
-    next()
-})
+
 
 
 // routes
-app.get("/", (req, res) => {
+app.get("/", cors(corsOptions), (req, res) => {
     res.send("Bem vindo a minha api");
 });
 
