@@ -15,8 +15,7 @@ const app = express();
 const port = process.env.PORT || 9000;
 
 
-
-
+app.use(cors())
 
 
 
@@ -28,17 +27,13 @@ app.use(express.json());
 app.use("/api", userRoute);
 
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+
 
 
 
 
 // routes
-app.get("/", (req, res, next) => {
+app.get("/", cors(), (req, res, next) => {
           
      
      res.send("Bem vindo a minha api");
