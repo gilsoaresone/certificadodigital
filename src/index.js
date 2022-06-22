@@ -14,7 +14,7 @@ const userRoute = require("./routes/user");
 const app = express();
 const port = process.env.PORT || 9000;
 
-
+//usar para habilitar o cors
 app.use(cors())
 
 
@@ -33,6 +33,7 @@ app.use("/api", userRoute);
 
 
 // routes
+// cors aqui
 app.get("/", cors(), (req, res, next) => {
           
      
