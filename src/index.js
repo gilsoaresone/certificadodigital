@@ -22,7 +22,7 @@ app.use("/api", userRoute);
 
 
 // routes
-app.get("/", (req, res) => {
+app.get("/", (req, res, next) => {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "X-Requested-With");
         next();
