@@ -13,11 +13,23 @@ const userRoute = require("./routes/user");
 // settings
 const app = express();
 const port = process.env.PORT || 9000;
+const corsOptions = {
+	origin: '*',
+	optionsSuccessStatus: 200
+};
+
+
+
+
+
+
+
 
 // middlewares
 
 app.use(express.json());
 app.use("/api", userRoute);
+app.use(cors(corsOptions));
 
 
 
