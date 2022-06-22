@@ -17,6 +17,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use("/api", userRoute);
 
+
 // routes
 app.get("/", (req, res) => {
     res.send("Bem vindo a minha api");
