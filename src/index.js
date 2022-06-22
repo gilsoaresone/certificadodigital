@@ -12,6 +12,11 @@ const port = process.env.PORT || 9000;
 
 app.use(express.json());
 app.use("/api", userRoute);
+app.use((req, res, next) => {
+    res.header("Acess-Control-Allow-Origin", "*");
+    app.use(cors());
+    next()
+})
 
 
 // routes
