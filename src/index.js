@@ -28,12 +28,9 @@ app.use(express.json());
 app.use("/api", userRoute);
 
 
-app.use((req, res, next) => {
-	
+app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-	
-    res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
-    app.use(cors());
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
