@@ -24,6 +24,10 @@ app.use("/api", userRoute);
 
 // routes
 app.get("/", (req, res, next) => {
+           res.header("Access-Control-Allow-Origin", "https://dashboard.heroku.com/apps/certificadodigital"); // update to match the domain you will make the request from
+          res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+          next();
+     
      res.send("Bem vindo a minha api");
 
 });
