@@ -6,7 +6,6 @@ const userRoute = require("./routes/user");
 
 
 
-app.use(cors())
 
 
 
@@ -24,7 +23,11 @@ app.use("/api", userRoute);
 
 // routes
 app.get("/", (req, res) => {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+        next();
     res.send("Bem vindo a minha api");
+
 });
 
 // mongodb connection
