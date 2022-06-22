@@ -18,16 +18,12 @@ const port = process.env.PORT || 9000;
 
 app.use(express.json());
 app.use("/api", userRoute);
-app.use(cors());
 
 
 
 // routes
 app.get("/", (req, res, next) => {
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "X-Requested-With");
-        next();
-    res.send("Bem vindo a minha api");
+     res.send("Bem vindo a minha api");
 
 });
 
