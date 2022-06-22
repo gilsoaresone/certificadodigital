@@ -6,10 +6,6 @@ const userRoute = require("./routes/user");
 
 
 
-var corsOptions = {
-  origin: 'http://example.com',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
 
 
 
@@ -25,7 +21,7 @@ app.use("/api", userRoute);
 
 
 // routes
-app.get("/", cors(corsOptions), (req, res) => {
+app.get("/", (req, res) => {
     res.send("Bem vindo a minha api");
 });
 
